@@ -1,9 +1,10 @@
 import Link from 'next/link'
-import { SignedIn, UserButton } from '@clerk/nextjs'
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
 
-import { DashboardButton } from './common/DashboardButton'
-import { Logo } from './common/Logo'
-import { ThemeSwitcher } from './common/ThemeSwitcher'
+import { Button } from '../ui/Button'
+import { DashboardButton } from './DashboardButton'
+import { Logo } from './Logo'
+import { ThemeSwitcher } from './ThemeSwitcher'
 
 export function Navbar() {
 	return (
@@ -22,6 +23,11 @@ export function Navbar() {
 						<UserButton />
 					</div>
 				</SignedIn>
+				<SignedOut>
+					<SignInButton>
+						<Button size="sm">Get Started</Button>
+					</SignInButton>
+				</SignedOut>
 			</nav>
 		</header>
 	)
