@@ -3,9 +3,14 @@ import { ArrowRight, Link as LinkIcon, Terminal, Video } from 'lucide-react'
 
 import { useMeetingActions } from '@/hooks/useMeetingActions'
 import { cn } from '@/lib/utils'
-import { Button } from '../ui/Button'
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../ui/Dialog'
-import { Input } from '../ui/Input'
+import { Button } from '../../ui/Button'
+import {
+	Dialog,
+	DialogContent,
+	DialogHeader,
+	DialogTitle
+} from '../../ui/Dialog'
+import { Input } from '../../ui/Input'
 
 interface MeetingModalProps {
 	isOpen: boolean

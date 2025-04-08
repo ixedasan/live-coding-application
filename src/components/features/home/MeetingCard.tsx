@@ -3,16 +3,16 @@ import { CalendarIcon, Clock, Code, Terminal, User, Video } from 'lucide-react'
 
 import { useMeetingActions } from '@/hooks/useMeetingActions'
 import { cn, getMeetingStatus } from '@/lib/utils'
-import { Doc } from '../../../convex/_generated/dataModel'
-import { Badge } from '../ui/Badge'
-import { Button } from '../ui/Button'
+import { Doc } from '../../../../convex/_generated/dataModel'
+import { Badge } from '../../ui/Badge'
+import { Button } from '../../ui/Button'
 import {
 	Card,
 	CardContent,
 	CardDescription,
 	CardHeader,
 	CardTitle
-} from '../ui/Card'
+} from '../../ui/Card'
 
 type Interview = Doc<'interviews'>
 

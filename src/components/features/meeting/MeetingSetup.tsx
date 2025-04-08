@@ -14,15 +14,15 @@ import {
 } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
-import { Button } from '../ui/Button'
+import { Button } from '../../ui/Button'
 import {
 	Card,
 	CardContent,
 	CardDescription,
 	CardHeader,
 	CardTitle
-} from '../ui/Card'
-import { Switch } from '../ui/Switch'
+} from '../../ui/Card'
+import { Switch } from '../../ui/Switch'
 
 export function MeetingSetup({
 	onSetupComplete

@@ -6,7 +6,7 @@ import { useUser } from '@clerk/nextjs'
 import { StreamCall, StreamTheme } from '@stream-io/video-react-sdk'
 
 import { Loader } from '@/components/common/Loader'
-import { MeetingSetup } from '@/components/features/MeetingSetup'
+import { MeetingSetup } from '@/components/features/meeting/MeetingSetup'
 import { useGetCallById } from '@/hooks/useGetCallById'
 
 export function MeetingPage() {

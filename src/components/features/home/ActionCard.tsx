@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils'
-import { Card } from '../ui/Card'
+import { Card } from '../../ui/Card'
 import { QuickActionType } from '@/constants'
 
 export function ActionCard({
