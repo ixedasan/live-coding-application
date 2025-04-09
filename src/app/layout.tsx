@@ -1,6 +1,11 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { ClerkProvider } from '@clerk/nextjs'
+import { RedirectToSignIn, SignedIn, SignedOut } from '@clerk/nextjs'
+
+import { Navbar } from '@/components/common/Navbar'
+import { Toaster } from '@/components/ui/Sonner'
+import { ConvexClerkProvider } from '@/providers/ConvexClerkProvider'
+import { ThemeProvider } from '@/providers/ThemeProvider'
 
 import './globals.css'
 
@@ -25,14 +30,30 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<ClerkProvider>
-			<html lang="en">
+		<ConvexClerkProvider>
+			<html lang="en" suppressHydrationWarning>
 				<body
 					className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 				>
-					{children}
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="system"
+						enableSystem
+						disableTransitionOnChange
+					>
+						<SignedIn>
+							<div className="min-h-screen">
+								<Navbar />
+								<main className="px-4 sm:px-6 lg:px-8">{children}</main>
+							</div>
+						</SignedIn>
+						<SignedOut>
+							<RedirectToSignIn />
+						</SignedOut>
+						<Toaster />
+					</ThemeProvider>
 				</body>
 			</html>
-		</ClerkProvider>
+		</ConvexClerkProvider>
 	)
 }
