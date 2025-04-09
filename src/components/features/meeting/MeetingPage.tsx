@@ -8,6 +8,7 @@ import { StreamCall, StreamTheme } from '@stream-io/video-react-sdk'
 import { Loader } from '@/components/common/Loader'
 import { MeetingSetup } from '@/components/features/meeting/MeetingSetup'
 import { useGetCallById } from '@/hooks/useGetCallById'
+import { MeetingRoom } from './MeetingRoom'
 
 export function MeetingPage() {
 	const { id } = useParams()
@@ -24,7 +25,7 @@ export function MeetingPage() {
 				{!isSetupComplete ? (
 					<MeetingSetup onSetupComplete={() => setIsSetupComplete(true)} />
 				) : (
-					<></>
+					<MeetingRoom />
 				)}
 			</StreamTheme>
 		</StreamCall>
